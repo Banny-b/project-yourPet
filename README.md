@@ -1,2 +1,2 @@
-# project-yourPet
+# project-your-pet
 Final project NodeJs
