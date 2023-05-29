@@ -1,0 +1,65 @@
+.container {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.formWrapper {
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.wrapper {
+    position: relative;
+}
+
+@media screen and (max-width: 767px) {
+    .controls {
+        width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        padding-top: 80px;
+        padding-bottom: 192px;
+    }
+
+    .formWrapper {
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 12px;
+        max-width: 320px;
+    }
+
+    .buttonWrapper {
+        display: flex;
+        gap: 12px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .container {
+        padding-bottom: 103px;
+    }
+
+    .wrapper {
+        align-items: center;
+        flex-direction: row-reverse;
+        max-width: 100%;
+    }
+}

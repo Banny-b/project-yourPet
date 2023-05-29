@@ -1,0 +1,246 @@
+.item {
+    width: 280px;
+    padding-bottom: 24px;
+    background-color: #ffffff;
+    box-shadow: var(--small-shadow);
+    border-radius: 0px 0px 40px 40px;
+}
+
+.imgWrapper {
+    height: 288px;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.upperBlock {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    left: 0;
+}
+
+.upperBlockText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 126px;
+    padding: 11px 17px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--header-font);
+    background-color: var(--main-light);
+    border-radius: 0px 16px 16px 0px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    line-height: 0;
+    border-radius: 50%;
+    background-color: #c5dff6;
+    color: transparent;
+    transition: color var(--timing);
+
+    &:hover {
+        color: var(--main-acc);
+    }
+}
+
+.btnDelete {
+    @extend .btn;
+    margin-top: 16px;
+}
+
+.btnIcon {
+    stroke: var(--main-acc);
+    fill: currentColor;
+}
+
+.favorite {
+    color: var(--main-acc);
+}
+
+.lowerBlock {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 12px;
+    right: 8px;
+    left: 8px;
+    list-style: none;
+}
+
+.lowerBlockItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    width: 84px;
+    background-color: var(--main-light);
+    border-radius: 16px;
+    color: var(--main-acc);
+    transition: background-color var(--timing), color var(--timing);
+
+    &:hover {
+        background-color: var(--main-acc);
+        color: var(--main-light);
+    }
+}
+
+.lowerBlockBtn {
+    @extend .lowerBlockItem;
+
+    border: none;
+
+    &.active {
+        background-color: var(--main-acc);
+        color: var(--main-light);
+    }
+}
+
+.icon {
+    stroke: currentColor;
+    min-width: 24px;
+}
+
+.label {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: var(--header-font);
+
+    .lowerBlockItem:hover &,
+    .lowerBlockBtn.active & {
+        color: var(--main-light);
+    }
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.title {
+    width: 231px;
+    max-height: 66px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.titleWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.btnLearn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    width: 248px;
+    height: 38px;
+    padding: 6px 28px;
+    margin: 0 auto;
+    border: 2px solid var(--main-acc);
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    background-color: transparent;
+    color: var(--main-acc);
+    transition: color var(--timing);
+
+    &:hover,
+    &:focus {
+        color: var(--main-back);
+        border: none;
+
+        &::before {
+            opacity: 1;
+        }
+
+        & > .btnLearnIcon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--gradient);
+        opacity: 0;
+        transition: opacity var(--timing);
+    }
+
+    & span {
+        z-index: 5;
+    }
+}
+
+.btnLearnIcon {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    fill: currentColor;
+    transition: opacity var(--timing);
+}
+
+@media screen and (min-width: 768px) {
+    .item {
+        width: 336px;
+    }
+
+    .lowerBlock {
+        left: 24px;
+        right: 24px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .item {
+        width: 288px;
+    }
+
+    .lowerBlock {
+        left: 12px;
+        right: 12px;
+    }
+}

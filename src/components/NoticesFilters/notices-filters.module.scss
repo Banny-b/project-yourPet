@@ -1,0 +1,198 @@
+.wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    background-color: transparent;
+}
+
+.openBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #c5dff6;
+    color: var(--main-acc);
+    transition: color var(--timing), background-color var(--timing);
+
+    &:hover,
+    &:focus {
+        color: #ffffff;
+        border: none;
+        background-color: transparent;
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--gradient);
+        opacity: 0;
+        transition: opacity var(--timing);
+    }
+}
+
+.openBtnLabel {
+    display: none;
+}
+
+.openBtnIcon {
+    stroke: currentColor;
+}
+
+.dropdownContainer {
+    position: absolute;
+    margin-top: 50px;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: var(--small-shadow);
+}
+
+.text {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    color: var(--main-acc);
+}
+
+.submenu {
+    width: 136px;
+    margin-bottom: 8px;
+    padding: 8px;
+    padding-right: 22px;
+    border-radius: 20px;
+    background-color: var(--main-light);
+    transition: var(--timing);
+
+    &:hover,
+    &:focus {
+        background-color: #aed1f3;
+
+        & button {
+            background-color: #aed1f3;
+        }
+    }
+}
+
+.filterBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    border: none;
+    background-color: var(--main-light);
+    transition: var(--timing);
+}
+
+.btnLabel {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--main-acc);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    padding-left: 18px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 4px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--main-acc);
+}
+
+.input {
+    display: grid;
+    place-content: center;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    line-height: 0;
+    border-radius: 4px;
+    border: 2px solid var(--main-acc);
+    appearance: none;
+
+    &::before {
+        content: '';
+        width: 0.85em;
+        height: 0.85em;
+        transform: scale(0);
+        box-shadow: inset 1em 1em var(--main-acc);
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+
+    &:checked {
+        &::before {
+            transform: scale(1);
+        }
+
+        &:hover,
+        &:focus {
+            transform: scale(1.2);
+            box-shadow: inset 1em 1em var(--header-acc);
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .dropdownContainer {
+        right: 0;
+        top: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        position: static;
+    }
+
+    .openBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+        padding: 9px;
+        width: 152px;
+        border: 2px solid var(--main-acc);
+        border-radius: 40px;
+        background-color: transparent;
+    }
+
+    .openBtnLabel {
+        display: block;
+    }
+
+    .dropdownContainer {
+        margin-top: 20px;
+    }
+}
