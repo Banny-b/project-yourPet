@@ -2,7 +2,7 @@
     "name": "project-your-pet",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://Banny-b.github.io/project-your-pet/",
+    "homepage": "https://banny-b.github.io/project-your-pet/",
     "dependencies": {
         "@emotion/react": "^11.11.0",
         "@emotion/styled": "^11.11.0",
